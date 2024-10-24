@@ -1,17 +1,15 @@
-const launchDate = new Date("2024-10-25");
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
 
-// Update the countdown every second
-setInterval(() => {
-    const now = new Date();
-    const timeDifference = launchDate - now;
-
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerText = days.toString().padStart(2, "0");
-    document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
-    document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
-    document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
-}, 1000);
+function carousel() {
+  var i;
+  var x =document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}

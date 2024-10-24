@@ -10,25 +10,20 @@ body {
     color: #23A163; /* Green text color */
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 25%;
     transform: translate(-50% ,-50%);
 }
 
 h1 {
     font-size: 48px;
     font-weight: bold;
-    
-    
+    color: whitesmoke;
 }
-
-.countdown {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.countdown span {
-    margin: 0 10px;
+p {
+   color: whitesmoke;
+   font-size: 28px;
+   font-weight: bold;
+   
 }
 *{
     margin: 0;
@@ -115,3 +110,31 @@ h1 {
     border:1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
  }
+ .custom-shape-divider-bottom-1729238613 {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   overflow: hidden;
+   line-height: 0;
+}
+
+.custom-shape-divider-bottom-1729238613 svg {
+   position: relative;
+   display: block;
+   width: calc(142% + 1.3px);
+   height: 163px;
+}
+
+.custom-shape-divider-bottom-1729238613 .shape-fill {
+   fill: #333;
+}
+h2
+{
+   font-size: 48px;
+   font-weight: bold;
+   color: whitesmoke;
+   position: absolute;
+   top: 30%;
+   left: 15%;
+}
