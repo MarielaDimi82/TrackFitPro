@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивна карта на фитнеси и паркове в Пловдив</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        body
+         {
+            background: #333;
+
+        }
+        h1
+        {
+            color: whitesmoke;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Близки фитнеси и паркове в Пловдив</h1>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Създаване на картата
+        const map = L.map('map').setView([42.1354, 24.7454], 13); // Координати на Пловдив
+
+        // Добавяне на слой с OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Списък с фитнеси и паркове
+        const locations = [
+            
+            { name: "Фитнес 'Пулс'", coords: [42.1356, 24.7455] },
+            { name: "Фитнес 'Атлетик'", coords: [42.1400, 24.7400] },
+            { name: "Парк 'Отдих и култура'", coords: [42.1400, 24.7455] },
+            { name: "Парк 'Лаута'", coords: [42.1380, 24.7790] },
+        ];
+
+        // Добавяне на маркери на картата
+        locations.forEach(location => {
+            L.marker(location.coords)
+                .addTo(map)
+                .bindPopup(location.name);
+        });
+    </script>
+</body>
+</html>
