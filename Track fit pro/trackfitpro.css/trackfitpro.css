@@ -135,16 +135,17 @@ h2
    font-weight: bold;
    color: whitesmoke;
    position: absolute;
-   top: 30%;
+   top: 0%;
    left: 15%;
    padding: 10%;
+   text-align: center;
 }
 p1
 {
    font-weight: bold;
    position: absolute;
    color: whitesmoke;
-   font-size: 48%;
+   font-size: 25px;
    padding: 10%;
    top: 20%;
    left: 10%;
