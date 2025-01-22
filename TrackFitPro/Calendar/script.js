@@ -2,20 +2,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const calendar = document.getElementById('calendar');
     const today = new Date();
     const currentDay = today.getDate();
-    let tasks = {};  
+    const currentMonth = today.getMonth();
+    const currentYear = today.getFullYear();
+    let tasks = {};
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthNameElement = document.getElementById('monthName');
+    monthNameElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
 
     function createCalendar() {
-        for (let i = 1; i <= 30; i++) {
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        for (let i = 1; i <= daysInMonth; i++) {
             const dayElement = document.createElement('div');
             dayElement.classList.add('calendar-day');
             dayElement.textContent = `Day ${i}`;
 
-            // handle past current and future days
-            if (i < currentDay) {
+            if (i < today.getDate()) {
                 if (tasks[i]) {
-                    dayElement.classList.add('completed'); 
+                    dayElement.classList.add('completed');
                 } else {
-                    dayElement.classList.add('missed'); 
+                    dayElement.classList.add('missed');
                 }
             } else if (i === currentDay) {
                 dayElement.classList.add('current');
@@ -50,15 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (taskText) {
                 dayElement.innerHTML = `<div class="task-text">Tasks: ${taskText}</div>`;
                 dayElement.classList.remove('current');
-                dayElement.classList.add('completed'); 
-                tasks[dayNumber] = taskText; 
+                dayElement.classList.add('completed');
+                tasks[dayNumber] = taskText;
             }
         });
     }
 
     createCalendar();
 
-    // check marked and missed days
     function updatePastDays() {
         const days = document.querySelectorAll('.calendar-day');
         days.forEach((dayElement, index) => {
@@ -66,13 +72,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (dayNumber < currentDay) {
                 if (tasks[dayNumber]) {
                     dayElement.classList.remove('missed');
-                    dayElement.classList.add('completed'); // Green for completed tasks
+                    dayElement.classList.add('completed');
                 } else {
-                    dayElement.classList.add('missed'); // Red if no task
+                    dayElement.classList.add('missed');
                 }
             }
         });
     }
-    
+
     updatePastDays();
 });

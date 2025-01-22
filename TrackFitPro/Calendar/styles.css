@@ -1,7 +1,6 @@
-/* Body Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #333;
+    background-color: #182017;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -17,17 +16,24 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Calendar Styles */
+.month-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #23a163;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     width: 1000px;
     max-width: 100%;
-    background-color: #ffffff;
+    background-color: #393939;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 24px 24px 24px rgba(0, 0, 0, 0.1);
 }
 
 .calendar-day {
@@ -43,25 +49,23 @@ h1 {
     position: relative;
 }
 
-/* Colors for task completion */
 .calendar-day.missed {
-    background-color: #FA7070; /* Red for missed days */
+    background-color: #FA7070;
 }
 
 .calendar-day.current {
-    background-color: #FFBB64; /* Yellow for the current day */
+    background-color: #FFBB64;
     cursor: pointer;
 }
 
 .calendar-day.completed {
-    background-color: #81c784; /* Green for completed days */
+    background-color: #81c784;
 }
 
 .calendar-day.future {
-    background-color: #FFEAA7; /* Grey for future days */
+    background-color: #FFEAA7;
 }
 
-/* Input and Task Styles */
 .task-input {
     width: 80%;
     padding: 5px;
@@ -74,18 +78,16 @@ h1 {
 }
 
 .task-text {
-    color: #4caf50;
+    color: #000000;
     margin-top: 10px;
     font-size: 14px;
     text-align: center;
 }
 
-/* Hover Effect */
 .calendar-day:hover {
     transform: translateY(-5px);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .calendar {
         grid-template-columns: repeat(4, 1fr);
@@ -102,18 +104,20 @@ h1 {
     }
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
-    color: whitesmoke;
+    color: #ffffff;
     font-family: sans-serif;
     letter-spacing: 1px;
     font-weight: 300;
- }
- body{
+}
+
+body {
     overflow-x: hidden;
- }
- nav{
+}
+
+nav {
     height: 4.5rem;
     width: 100vw;
     background-color: #484D53;
@@ -123,42 +127,46 @@ h1 {
     z-index: 10;
     top: 0;
     position: fixed;
- }
- 
- /*Styling logo*/
- .logo{
-    padding:1vh 1vw;
+}
+
+.logo {
+    padding: 1vh 1vw;
     text-align: center;
- }
- .logo img {
+}
+
+.logo img {
     height: 5rem;
     width: 5rem;
- }
- .nav-links{
+}
+
+.nav-links {
     display: flex;
-    list-style: none; 
+    list-style: none;
     width: 88vw;
     padding: 0 0.7vw;
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
- }
- .nav-links li a{
+}
+
+.nav-links li a {
     text-decoration: none;
     margin: 0 0.7vw;
- }
- .nav-links li a:hover {
+}
+
+.nav-links li a:hover {
     color: #23A163;
- }
- .nav-links li {
+}
+
+.nav-links li {
     position: relative;
- }
- .nav-links li a:hover::before{
+}
+
+.nav-links li a:hover::before {
     width: 80%;
- }
- 
- /*Styling Buttons*/
- .login-button{
+}
+
+.login-button {
     background-color: transparent;
     border: 1.5px solid #f2f5f7;
     border-radius: 2em;
@@ -166,27 +174,28 @@ h1 {
     margin-left: 2vw;
     font-size: 1rem;
     cursor: pointer;
- 
- }
- .login-button:hover {
-    color: #131418;
+}
+
+.login-button:hover {
+    color: #ffffff;
     background-color: #f2f5f7;
-    border:1.5px solid #f2f5f7;
+    border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
- }
- .join-button{
-    color: #131418;
+}
+
+.join-button {
+    color: #ffffff;
     background-color: #61DAFB;
     border: 1.5px solid #61DAFB;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
     cursor: pointer;
- }
- .join-button:hover {
+}
+
+.join-button:hover {
     color: #f2f5f7;
     background-color: transparent;
-    border:1.5px solid #f2f5f7;
+    border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
- }
- 
+}
